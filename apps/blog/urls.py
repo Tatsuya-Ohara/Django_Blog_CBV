@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import ToppageView
+from .views import HomeView, ArticleView
 
 
 urlpatterns = [
-    path('', ToppageView.as_view(), name='toppage'),
+    path('', HomeView.as_view(), name='home'),
+    path('<int:pk>/', ArticleView.as_view(), name='ArticleView'),
 ]

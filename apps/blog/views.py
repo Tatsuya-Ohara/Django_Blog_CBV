@@ -1,8 +1,8 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DetailView
 from .models import Blog
 
 
-class ToppageView(TemplateView):
+class HomeView(TemplateView):
     template_name = "index.html"
     model = Blog
 
@@ -10,3 +10,8 @@ class ToppageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['blogs'] = Blog.objects.all()
         return context
+
+
+class ArticleView(DetailView):
+    template_name = "detail.html"
+    model = Blog
