@@ -1,0 +1,7 @@
+<div>
+    <h2 class="mb-3">ブログの記事一覧</h2>
+    {% for blog in blogs %}
+        <h3>{{blog.title}}</h3>
+        <p>{{blog.body}}</p>
+    {% endfor %}
+</div>
