@@ -1,7 +1,8 @@
 <div>
     <h2 class="mb-3">ブログの記事一覧</h2>
     {% for blog in blogs %}
-        <h3>{{blog.title}}</h3>
-        <p>{{blog.body}}</p>
+        <h3>{{ blog.title }}</h3>
+        <span>({{ blog.created_at }})</span>
+        <a href="{% url 'ArticleView' pk=blog.id %}">記事へのリンク</a>
     {% endfor %}
 </div>
